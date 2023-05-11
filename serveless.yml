@@ -1,0 +1,18 @@
+service: projeto-karen-dio
+
+frameworkVersion: '2'
+
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  lambdaHashingversion: "11-05-2023"
+  region: sa-east-1
+
+  functions:
+    hello:
+      handler: handler.hello
+        events:
+          -http:
+             path: /
+              method: get
